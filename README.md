@@ -25,7 +25,7 @@ The source code for the projects featured on the live site can be found here:
 
 ## 📬 Contact
 * **GitHub:** [@GianmariaRomano](https://github.com/GianmariaRomano)
-* **LinkedIn:** [Add your link here](https://www.linkedin.com/in/gianmariaromano/)
+* **LinkedIn:** [Gianmaria Romano](https://www.linkedin.com/in/gianmariaromano/)
 
 ---
 *Created and maintained by Gianmaria Romano.*
