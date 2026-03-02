@@ -19,7 +19,7 @@ This site serves as a central hub for my research interests in:
 
 ## 🛠️ Featured Projects
 The source code for the projects featured on the live site can be found here:
-* [**EchoScope**](https://github.com/GianmariaRomano/EchoScope) - System diagnostic and monitoring tool.
+* [**EchoScope**](https://github.com/GianmariaRomano/EchoScope) - Spotify Track Analysis & Recommendation System.
 
 ---
 
