@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gianmaria Romano | Portfolio</title>
-    <link rel="stylesheet" href="[https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css](https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css)">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
             --bg: #0f172a;
@@ -35,16 +35,43 @@
         .subtitle { font-size: 1.1rem; color: var(--accent); font-weight: 500; margin-top: 5px; }
         .degree { opacity: 0.8; margin-top: 5px; }
 
+        /* Fix: Unified About Section */
         .about-section {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 30px;
-            margin-top: 30px;
+            margin-top: 40px;
         }
 
-        ul { list-style: none; padding: 0; line-height: 1.8; }
-        
-        hr { border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 30px 0; width: 100%; }
+        .about-column h3 {
+            border-left: 3px solid var(--accent);
+            padding-left: 10px;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+
+        .about-column ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .about-column li {
+            font-size: 1rem; /* Forces equal font size */
+            line-height: 2;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .list-header {
+            font-weight: bold;
+            margin-bottom: 8px;
+            display: block;
+            color: var(--accent);
+        }
+
+        hr { border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 40px 0; width: 100%; }
 
         /* The Grid */
         .grid {
@@ -93,25 +120,27 @@
         <div class="degree">Bachelor's Degree in Applied Computer Science and Artificial Intelligence</div>
 
         <div class="about-section">
-            <div>
-                <h3 style="border-left: 3px solid var(--accent); padding-left: 10px;">📍 About Me</h3>
-                <p><strong>📚 Research interests:</strong></p>
+            <div class="about-column">
+                <h3>📍 About Me</h3>
+                <span class="list-header">📚 Research interests:</span>
                 <ul>
-                    <li>📸 Computer Vision</li>
-                    <li>📈 Data Analysis</li>
-                    <li>🤖 Machine Learning</li>
-                    <li>🧠 Neural Networks</li>
-                    <li>🧿 Reinforcement Learning</li>
+                    <li><span>📸</span> Computer Vision</li>
+                    <li><span>📈</span> Data Analysis</li>
+                    <li><span>🤖</span> Machine Learning</li>
+                    <li><span>🧠</span> Neural Networks</li>
+                    <li><span>🧿</span> Reinforcement Learning</li>
                 </ul>
             </div>
-            <div>
-                <h3 style="margin-top: 48px;">💻 Programming languages:</h3>
+            
+            <div class="about-column">
+                <h3>💻 Expertise</h3>
+                <span class="list-header">🛠️ Programming languages:</span>
                 <ul>
-                    <li>🐍 Python</li>
-                    <li>☕ Java</li>
-                    <li>🟰 LaTeX</li>
-                    <li>📻 R</li>
-                    <li>💾 C</li>
+                    <li><span>🐍</span> Python</li>
+                    <li><span>☕</span> Java</li>
+                    <li><span>🟰</span> LaTeX</li>
+                    <li><span>📻</span> R</li>
+                    <li><span>💾</span> C</li>
                 </ul>
             </div>
         </div>
@@ -122,21 +151,22 @@
     <h2>🚀 Featured Projects</h2>
     
     <div class="grid">
-        <a href="[https://github.com/GianmariaRomano/EchoScope](https://github.com/GianmariaRomano/EchoScope)" class="card">
+        <a href="https://github.com/GianmariaRomano/EchoScope" target="_blank" class="card">
             <i class="fa-solid fa-microscope" style="font-size: 2rem; color: var(--accent);"></i>
             <h3>EchoScope</h3>
-            <p>A powerful diagnostic and monitoring tool designed for deep-dive system analysis and visualization.</p>
+            <p>Spotify Track Analysis & Recommendation System.</p>
             <div class="tags">
-                <span class="tag">System Monitoring</span>
-                <span class="tag">C# / .NET</span>
-                <span class="tag">Diagnostics</span>
+                <span class="tag">Machine Learning</span>
+                <span class="tag">Python</span>
+                <span class="tag">Clustering</span>
+                <span class="tag">Random Forest Regression</span>
             </div>
-            <div style="margin-top: 20px;"><i class="fa-brands fa-github"></i></div>
+            <div style="margin-top: 20px;"><i class="fa-brands fa-github"></i> View Source</div>
         </a>
 
         <div class="card" style="opacity: 0.5;">
-            <h3>Project Two</h3>
-            <p>Working on the next breakthrough...</p>
+            <h3>Next Project</h3>
+            <p>Developing new AI solutions. Stay tuned...</p>
         </div>
     </div>
 
