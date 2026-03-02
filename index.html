@@ -14,7 +14,7 @@
         }
 
         body {
-            font-family: 'Inter', -apple-system, sans-serif;
+            font-family: 'Inter', -apple-system, system-ui, sans-serif;
             background-color: var(--bg);
             color: var(--text);
             margin: 0;
@@ -22,6 +22,7 @@
             flex-direction: column;
             align-items: center;
             padding: 40px 20px;
+            -webkit-font-smoothing: antialiased;
         }
 
         header {
@@ -33,21 +34,24 @@
 
         h1 { font-size: 2.8rem; margin: 0; color: var(--accent); }
         .subtitle { font-size: 1.1rem; color: var(--accent); font-weight: 500; margin-top: 5px; }
-        .degree { opacity: 0.8; margin-top: 5px; }
+        .degree { opacity: 0.8; margin-top: 5px; font-size: 0.95rem; }
 
-        /* Fix: Unified About Section */
+        /* Fix: Grid alignment for the About Section */
         .about-section {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
             margin-top: 40px;
+            align-items: start; /* Ensures both columns start at the same top pixel */
         }
 
         .about-column h3 {
             border-left: 3px solid var(--accent);
-            padding-left: 10px;
-            font-size: 1.2rem;
-            margin-bottom: 15px;
+            padding-left: 12px;
+            font-size: 1.1rem;
+            margin: 0 0 15px 0; /* Reset margins */
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .about-column ul {
@@ -56,19 +60,27 @@
             margin: 0;
         }
 
+        /* Fix: Emoji and Text centering */
         .about-column li {
-            font-size: 1rem; /* Forces equal font size */
-            line-height: 2;
+            font-size: 1rem;
+            line-height: 2.2;
             display: flex;
             align-items: center;
-            gap: 10px;
+        }
+
+        .about-column li span.emoji {
+            display: inline-flex;
+            justify-content: center;
+            width: 30px; /* Fixed width for icon column */
+            margin-right: 10px;
         }
 
         .list-header {
-            font-weight: bold;
-            margin-bottom: 8px;
+            font-weight: 600;
+            margin-bottom: 10px;
             display: block;
             color: var(--accent);
+            opacity: 0.9;
         }
 
         hr { border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 40px 0; width: 100%; }
@@ -76,7 +88,7 @@
         /* The Grid */
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 25px;
             width: 100%;
             max-width: 1000px;
@@ -87,29 +99,42 @@
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 16px;
-            padding: 24px;
-            transition: transform 0.3s ease, border-color 0.3s ease;
+            padding: 28px;
+            transition: all 0.3s ease;
             text-decoration: none;
             color: inherit;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .card:hover {
             transform: translateY(-8px);
             border-color: var(--accent);
+            background: rgba(30, 41, 59, 0.9);
         }
 
         .tag {
             background: rgba(56, 189, 248, 0.1);
             color: var(--accent);
-            font-size: 0.75rem;
+            font-size: 0.7rem;
+            font-weight: 600;
             padding: 4px 10px;
             border-radius: 20px;
-            margin-right: 5px;
+            margin: 8px 4px 0 0;
             display: inline-block;
-            margin-top: 10px;
         }
 
-        h2 { font-size: 1.2rem; opacity: 0.6; margin-bottom: 20px; width: 100%; max-width: 1000px; }
+        .view-link {
+            margin-top: 25px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        h2 { font-size: 1.2rem; opacity: 0.5; margin-bottom: 25px; width: 100%; max-width: 1000px; text-transform: uppercase; }
     </style>
 </head>
 <body>
@@ -117,18 +142,18 @@
     <header>
         <h1>Gianmaria Romano</h1>
         <div class="subtitle">Third-year Undergraduate @ Sapienza Università di Roma</div>
-        <div class="degree">Bachelor's Degree in Applied Computer Science and Artificial Intelligence</div>
+        <div class="degree">Applied Computer Science and Artificial Intelligence</div>
 
         <div class="about-section">
             <div class="about-column">
                 <h3>📍 About Me</h3>
                 <span class="list-header">📚 Research interests:</span>
                 <ul>
-                    <li><span>📸</span> Computer Vision</li>
-                    <li><span>📈</span> Data Analysis</li>
-                    <li><span>🤖</span> Machine Learning</li>
-                    <li><span>🧠</span> Neural Networks</li>
-                    <li><span>🧿</span> Reinforcement Learning</li>
+                    <li><span class="emoji">📸</span> Computer Vision</li>
+                    <li><span class="emoji">📈</span> Data Analysis</li>
+                    <li><span class="emoji">🤖</span> Machine Learning</li>
+                    <li><span class="emoji">🧠</span> Neural Networks</li>
+                    <li><span class="emoji">🧿</span> Reinforcement Learning</li>
                 </ul>
             </div>
             
@@ -136,11 +161,11 @@
                 <h3>💻 Expertise</h3>
                 <span class="list-header">🛠️ Programming languages:</span>
                 <ul>
-                    <li><span>🐍</span> Python</li>
-                    <li><span>☕</span> Java</li>
-                    <li><span>🟰</span> LaTeX</li>
-                    <li><span>📻</span> R</li>
-                    <li><span>💾</span> C</li>
+                    <li><span class="emoji">🐍</span> Python</li>
+                    <li><span class="emoji">☕</span> Java</li>
+                    <li><span class="emoji">🟰</span> LaTeX</li>
+                    <li><span class="emoji">📻</span> R</li>
+                    <li><span class="emoji">💾</span> C</li>
                 </ul>
             </div>
         </div>
@@ -152,21 +177,26 @@
     
     <div class="grid">
         <a href="https://github.com/GianmariaRomano/EchoScope" target="_blank" class="card">
-            <i class="fa-solid fa-microscope" style="font-size: 2rem; color: var(--accent);"></i>
-            <h3>EchoScope</h3>
-            <p>Spotify Track Analysis & Recommendation System.</p>
-            <div class="tags">
-                <span class="tag">Machine Learning</span>
-                <span class="tag">Python</span>
-                <span class="tag">Clustering</span>
-                <span class="tag">Random Forest Regression</span>
+            <div>
+                <i class="fa-solid fa-microscope" style="font-size: 2.2rem; color: var(--accent);"></i>
+                <h3 style="margin: 20px 0 10px 0; font-size: 1.4rem;">EchoScope</h3>
+                <p style="opacity: 0.8; font-size: 0.95rem; line-height: 1.5;">Spotify Track Analysis & Recommendation System using clustering and regression.</p>
+                <div class="tags">
+                    <span class="tag">Machine Learning</span>
+                    <span class="tag">Python</span>
+                    <span class="tag">Clustering</span>
+                    <span class="tag">Random Forest</span>
+                </div>
             </div>
-            <div style="margin-top: 20px;"><i class="fa-brands fa-github"></i> View Source</div>
+            <div class="view-link"><i class="fa-brands fa-github"></i> View Source</div>
         </a>
 
-        <div class="card" style="opacity: 0.5;">
-            <h3>Next Project</h3>
-            <p>Developing new AI solutions. Stay tuned...</p>
+        <div class="card" style="opacity: 0.4; cursor: default;">
+            <div>
+                <i class="fa-solid fa-code" style="font-size: 2.2rem;"></i>
+                <h3 style="margin: 20px 0 10px 0; font-size: 1.4rem;">Next Project</h3>
+                <p style="opacity: 0.8; font-size: 0.95rem;">Building something new in the AI space...</p>
+            </div>
         </div>
     </div>
 
