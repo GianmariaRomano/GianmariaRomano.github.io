@@ -1,4 +1,4 @@
-# 🚀 Gianmaria Romano | Portfolio Source
+# 🛰 Gianmaria Romano | Portfolio Source
 
 This repository hosts my personal portfolio and academic showcase, built with HTML/CSS and hosted via **GitHub Pages**.
 
@@ -12,14 +12,15 @@ I am currently a third-year undergraduate at **Sapienza Università di Roma**, p
 
 This site serves as a central hub for my research interests in:
 * Computer Vision 📸
-* Data Analysis
+* Data Analysis 📈
 * Machine Learning 🤖
 * Neural Networks 🧠
 * Reinforcement Learning 🧿
 
 ## 🛠️ Featured Projects
 The source code for the projects featured on the live site can be found here:
-* [**EchoScope**](https://github.com/GianmariaRomano/EchoScope) - Spotify Track Analysis & Recommendation System.
+* [🎶 **EchoScope**](https://github.com/GianmariaRomano/EchoScope) - Spotify Track Analysis & Recommendation System.
+* [🍃 **AQ-Chronos**](https://github.com/GianmariaRomano/AQ-Chronos) - Smart Air Quality Surveillance Across the Globe.
 
 ---
 
