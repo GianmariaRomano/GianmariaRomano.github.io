@@ -7,10 +7,23 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
-            --bg: #0f172a;
-            --card-bg: rgba(30, 41, 59, 0.7);
-            --accent: #38bdf8;
-            --text: #f1f5f9;
+            --bg: #111817;
+            --card-bg: rgba(22, 32, 30, 0.7);
+            --accent: #34d399;
+            --text: #ecfdf5;
+            --text-muted: #94a3b8;
+            --border: rgba(52, 211, 153, 0.15);
+        }
+
+        @media (prefers-color-scheme: light) {
+            :root {
+                --bg: #f4f7f6;
+                --card-bg: rgba(255, 255, 255, 0.85);
+                --accent: #059669;
+                --text: #111c18;
+                --text-muted: #64748b;
+                --border: rgba(5, 150, 105, 0.12);
+            }
         }
 
         body {
@@ -34,22 +47,21 @@
 
         h1 { font-size: 2.8rem; margin: 0; color: var(--accent); }
         .subtitle { font-size: 1.1rem; color: var(--accent); font-weight: 500; margin-top: 5px; }
-        .degree { opacity: 0.8; margin-top: 5px; font-size: 0.95rem; }
+        .degree { color: var(--text-muted); margin-top: 5px; font-size: 0.95rem; }
 
-        /* Fix: Grid alignment for the About Section */
         .about-section {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 40px;
             margin-top: 40px;
-            align-items: start; /* Ensures both columns start at the same top pixel */
+            align-items: start;
         }
 
         .about-column h3 {
             border-left: 3px solid var(--accent);
             padding-left: 12px;
             font-size: 1.1rem;
-            margin: 0 0 15px 0; /* Reset margins */
+            margin: 0 0 15px 0;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
@@ -60,7 +72,6 @@
             margin: 0;
         }
 
-        /* Fix: Emoji and Text centering */
         .about-column li {
             font-size: 1rem;
             line-height: 2.2;
@@ -71,7 +82,7 @@
         .about-column li span.emoji {
             display: inline-flex;
             justify-content: center;
-            width: 30px; /* Fixed width for icon column */
+            width: 30px;
             margin-right: 10px;
         }
 
@@ -83,9 +94,13 @@
             opacity: 0.9;
         }
 
-        hr { border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 40px 0; width: 100%; }
+        hr { 
+            border: 0; 
+            border-top: 1px solid color-mix(in srgb, var(--text) 15%, transparent); 
+            margin: 40px 0; 
+            width: 100%; 
+        }
 
-        /* The Grid */
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -96,8 +111,9 @@
 
         .card {
             background: var(--card-bg);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid var(--border);
             border-radius: 16px;
             padding: 28px;
             transition: all 0.3s ease;
@@ -111,13 +127,14 @@
         .card:hover {
             transform: translateY(-8px);
             border-color: var(--accent);
-            background: rgba(30, 41, 59, 0.9);
+            background: color-mix(in srgb, var(--card-bg) 85%, var(--accent) 6%);
+            box-shadow: 0 12px 24px -10px color-mix(in srgb, var(--accent) 30%, transparent);
         }
 
         .tag {
-            background: rgba(56, 189, 248, 0.1);
+            background: color-mix(in srgb, var(--accent) 10%, transparent);
             color: var(--accent);
-            font-size: 0.7rem;
+            font-size: 0.75rem;
             font-weight: 600;
             padding: 4px 10px;
             border-radius: 20px;
@@ -134,7 +151,7 @@
             color: var(--accent);
         }
 
-        h2 { font-size: 1.2rem; opacity: 0.5; margin-bottom: 25px; width: 100%; max-width: 1000px; text-transform: uppercase; }
+        h2 { font-size: 1.2rem; color: var(--text-muted); margin-bottom: 25px; width: 100%; max-width: 1000px; text-transform: uppercase; }
     </style>
 </head>
 <body>
@@ -180,8 +197,8 @@
             <div>
                 <i class="fa-solid fa-wave-square" style="font-size: 2.2rem; color: var(--accent);"></i>
                 <h3 style="margin: 20px 0 10px 0; font-size: 1.4rem;">EchoScope</h3>
-                <p style="opacity: 0.8; font-size: 0.95rem; line-height: 1.6;">Spotify Track Analysis & Recommendation System using clustering and regression.</p>
-                <div class="tags">
+                <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 0;">Spotify Track Analysis & Recommendation System using clustering and regression.</p>
+                <div class="tags" style="margin-top: 12px;">
                     <span class="tag">Machine Learning</span>
                     <span class="tag">Python</span>
                     <span class="tag">Clustering</span>
@@ -195,8 +212,8 @@
             <div>
                 <i class="fa-solid fa-cloud-sun" style="font-size: 2.2rem; color: var(--accent);"></i>
                 <h3 style="margin: 20px 0 10px 0; font-size: 1.4rem;">AQ-Chronos</h3>
-                <p style="opacity: 0.8; font-size: 0.95rem; line-height: 1.6;">Air Quality monitoring and time-series forecasting system for environmental data analysis.</p>
-                <div class="tags">
+                <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; margin-bottom: 0;">Air Quality monitoring and time-series forecasting system for environmental data analysis.</p>
+                <div class="tags" style="margin-top: 12px;">
                     <span class="tag">Time Series</span>
                     <span class="tag">Data Analysis</span>
                     <span class="tag">Python</span>
@@ -206,11 +223,11 @@
             <div class="view-link"><i class="fa-brands fa-github"></i> View Source</div>
         </a>
 
-        <div class="card" style="opacity: 0.4; cursor: default;">
+        <div class="card" style="opacity: 0.4; cursor: default; border-color: transparent;">
             <div>
                 <i class="fa-solid fa-code" style="font-size: 2.2rem;"></i>
                 <h3 style="margin: 20px 0 10px 0; font-size: 1.4rem;">Next Project</h3>
-                <p style="opacity: 0.8; font-size: 0.95rem;">Building something new...</p>
+                <p style="color: var(--text-muted); font-size: 0.95rem;">Building something new...</p>
             </div>
         </div>
     </div>
