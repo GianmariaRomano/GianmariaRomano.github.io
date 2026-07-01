@@ -74,10 +74,10 @@
         }
 
         .separator-img {
-            max-width: 120px;
+            max-width: 260px;
             height: auto;
-            margin: 10px auto;
-            opacity: 0.8;
+            margin: 15px auto;
+            opacity: 0.85;
             display: block;
         }
 
@@ -100,9 +100,15 @@
             margin-bottom: 60px;
         }
 
-        /* Swaps order on specific sections for visual rhythm */
+        /* FIX 1: Ensure the reverse layout places image first (left) and text second (right) */
         .reverse-layout {
             grid-template-columns: 1fr 1fr;
+        }
+        .reverse-layout .image-frame {
+            grid-column: 1;
+        }
+        .reverse-layout .text-block {
+            grid-column: 2;
         }
 
         .text-block {
@@ -112,6 +118,70 @@
 
         .text-block p {
             margin: 0;
+        }
+
+        .personal-intro-container {
+            width: 100%;
+            max-width: 800px;
+            margin-bottom: 60px;
+        }
+
+        .intro-profile-split {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
+        /* Container that forces the 3 lists to sit sideways (side-by-side) */
+        .interests-lists-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            width: 100%;
+        }
+
+        .interest-column-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+
+        .interest-column-card h3 {
+            font-size: 1rem;
+            color: var(--accent);
+            margin-top: 0;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 8px;
+        }
+
+        .interest-column-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .interest-column-card li {
+            font-size: 0.95rem;
+            line-height: 2;
+            color: var(--text-muted);
+            position: relative;
+            padding-left: 14px;
+        }
+
+        .interest-column-card li::before {
+            content: "•";
+            color: var(--accent);
+            position: absolute;
+            left: 0;
+            opacity: 0.7;
         }
 
         .poem-title {
@@ -212,27 +282,37 @@
         }
 
         .gif-container img {
-            max-width: 200px;
+            max-width: 450px;
+            width: 100%;
             height: auto;
-            opacity: 0.75;
+            opacity: 0.8;
             border-radius: 8px;
         }
 
+        /* Mobile Adjustments Code */
         @media (max-width: 768px) {
-            .content-section, .reverse-layout {
+            .intro-profile-split {
                 grid-template-columns: 1fr;
                 gap: 30px;
                 text-align: center;
             }
-            .content-section :nth-child(1) {
-                order: 2;
+            .intro-profile-split :nth-child(1) { order: 2; }
+            .intro-profile-split :nth-child(2) { order: 1; }
+            
+            .interests-lists-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
             }
-            .content-section :nth-child(2) {
-                order: 1;
-            }
-            .poem-body {
+
+            .content-section, .reverse-layout {
+                grid-template-columns: 1fr !important;
+                gap: 30px;
                 text-align: center;
             }
+            /* FIX 2: Reset grid assignments for clean mobile stacking order */
+            .reverse-layout .image-frame { grid-column: auto; order: 1; }
+            .reverse-layout .text-block { grid-column: auto; order: 2; }
+            .poem-body { text-align: center; }
         }
     </style>
 </head>
@@ -250,12 +330,49 @@
 
     <hr>
 
-    <section class="content-section">
-        <div class="text-block">
-            <p>My name is <strong>Gianmaria Romano</strong>, and I am a third-year undergraduate student at Sapienza Università di Roma, currently pursuing a Bachelor's Degree in Applied Computer Science and Artificial Intelligence.</p>
+    <section class="personal-intro-container">
+        <div class="intro-profile-split">
+            <div class="text-block">
+                <p>My name is <strong>Gianmaria Romano</strong>, and I am a third-year undergraduate student at Sapienza Università di Roma, currently pursuing a Bachelor's Degree in Applied Computer Science and Artificial Intelligence. Outside of that, my interests include <strong>travelling</strong>, <strong>reading</strong> and <strong>listening to music</strong>!</p>
+            </div>
+            <div class="image-frame">
+                <img src="images/ajisai.jpeg" alt="Ajisai flower space profile">
+            </div>
         </div>
-        <div class="image-frame">
-            <img src="images/ajisai.jpeg" alt="Ajisai flower space profile">
+
+        <div class="interests-lists-grid">
+            <div class="interest-column-card">
+                <h3>✈ Dream Destinations</h3>
+                <ul>
+                    <li>Japan</li>
+                    <li>Australia</li>
+                    <li>Norway</li>
+                    <li>Finland</li>
+                    <li>Portugal</li>
+                </ul>
+            </div>
+
+            <div class="interest-column-card">
+                <h3>🔖 Favourite Authors</h3>
+                <ul>
+                    <li>Haruki Murakami</li>
+                    <li>F. Scott Fitzgerald</li>
+                    <li>Agatha Christie</li>
+                    <li>Amélie Nothomb</li>
+                    <li>Don DeLillo</li>
+                </ul>
+            </div>
+
+            <div class="interest-column-card">
+                <h3>🎼 Favourite Artists</h3>
+                <ul>
+                    <li>MARINA</li>
+                    <li>Kenshi Yonezu</li>
+                    <li>New Order</li>
+                    <li>Depeche Mode</li>
+                    <li>Ado</li>
+                </ul>
+            </div>
         </div>
     </section>
 
