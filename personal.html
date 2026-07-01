@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gianmaria Romano | Personal Corner</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --bg: #111817;
+            --card-bg: rgba(22, 32, 30, 0.7);
+            --accent: #34d399;
+            --text: #ecfdf5;
+            --text-muted: #94a3b8;
+            --border: rgba(52, 211, 153, 0.15);
+        }
+
+        @media (prefers-color-scheme: light) {
+            :root {
+                --bg: #f4f7f6;
+                --card-bg: rgba(255, 255, 255, 0.85);
+                --accent: #059669;
+                --text: #111c18;
+                --text-muted: #64748b;
+                --border: rgba(5, 150, 105, 0.12);
+            }
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, system-ui, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        header {
+            text-align: center;
+            width: 100%;
+            max-width: 800px;
+            margin-bottom: 40px;
+        }
+
+        .back-link {
+            text-align: left;
+            width: 100%;
+            max-width: 800px;
+            margin-bottom: 30px;
+        }
+        .back-link a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.2s;
+        }
+        .back-link a:hover {
+            color: var(--accent);
+        }
+
+        h1 { font-size: 2.8rem; margin: 0 0 15px 0; color: var(--accent); }
+        
+        .quote {
+            font-size: 1.15rem;
+            color: var(--text);
+            font-style: italic;
+            line-height: 1.6;
+            max-width: 600px;
+            margin: 0 auto 25px auto;
+            opacity: 0.9;
+        }
+
+        .separator-img {
+            max-width: 120px;
+            height: auto;
+            margin: 10px auto;
+            opacity: 0.8;
+            display: block;
+        }
+
+        hr { 
+            border: 0; 
+            border-top: 1px solid color-mix(in srgb, var(--text) 15%, transparent); 
+            margin: 40px 0; 
+            width: 100%; 
+            max-width: 800px;
+        }
+
+        /* Responsive Layout Container for sections */
+        .content-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            width: 100%;
+            max-width: 800px;
+            align-items: center;
+            margin-bottom: 60px;
+        }
+
+        /* Swaps order on specific sections for visual rhythm */
+        .reverse-layout {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .text-block {
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        .text-block p {
+            margin: 0;
+        }
+
+        .poem-title {
+            font-size: 1.3rem;
+            color: var(--accent);
+            margin: 0 0 15px 0;
+            font-weight: 600;
+        }
+
+        .poem-body {
+            font-family: inherit;
+            line-height: 1.9;
+            font-size: 0.95rem;
+            margin: 0;
+            white-space: pre-line;
+            color: var(--text);
+        }
+
+        .poem-author {
+            margin-top: 15px;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .image-frame {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+
+        .image-frame img {
+            width: 100%;
+            height: auto;
+            max-height: 380px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .playlist-wrapper {
+            width: 100%;
+            max-width: 800px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .playlist-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 20px;
+            max-width: 450px;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+        }
+
+        .playlist-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--accent);
+            background: color-mix(in srgb, var(--card-bg) 85%, var(--accent) 6%);
+            box-shadow: 0 12px 24px -10px color-mix(in srgb, var(--accent) 30%, transparent);
+        }
+
+        .playlist-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .playlist-btn {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 600;
+            color: var(--accent);
+            font-size: 1.1rem;
+            margin-top: 5px;
+        }
+
+        .gif-container {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            max-width: 800px;
+            margin: 60px 0 20px 0;
+        }
+
+        .gif-container img {
+            max-width: 200px;
+            height: auto;
+            opacity: 0.75;
+            border-radius: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .content-section, .reverse-layout {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                text-align: center;
+            }
+            .content-section :nth-child(1) {
+                order: 2;
+            }
+            .content-section :nth-child(2) {
+                order: 1;
+            }
+            .poem-body {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="back-link">
+        <a href="index.html"><i class="fa-solid fa-arrow-left"></i> Back to Portfolio</a>
+    </div>
+
+    <header>
+        <h1>My Personal Corner</h1>
+        <p class="quote">"What separates myths from reality? What separates man from monster? What separates you from me?"</p>
+        <img src="images/medusa.jpeg" alt="Medusa separator" class="separator-img">
+    </header>
+
+    <hr>
+
+    <section class="content-section">
+        <div class="text-block">
+            <p>My name is <strong>Gianmaria Romano</strong>, and I am a third-year undergraduate student at Sapienza Università di Roma, currently pursuing a Bachelor's Degree in Applied Computer Science and Artificial Intelligence.</p>
+        </div>
+        <div class="image-frame">
+            <img src="images/ajisai.jpeg" alt="Ajisai flower space profile">
+        </div>
+    </section>
+
+    <section class="content-section reverse-layout">
+        <div class="image-frame">
+            <img src="images/flowers.jpeg" alt="Poem backdrop flowers">
+        </div>
+        <div class="text-block">
+            <div class="poem-title">朝のリレー</div>
+            <pre class="poem-body">カムチャッカの若者が
+きりんの夢を見ているとき
+メキシコの娘は
+朝もやの中でバスを待っている
+ニューヨークの少女が
+ほほえみながら寝がえりをうつとき
+ローマの少年は
+柱頭を染める朝陽にウインクする
+この地球では
+いつもどこかで朝がはじまっている
+ぼくらは朝をリレーするのだ
+経度から経度へと
+そうしていわば交替で地球を守る
+眠る前のひととき耳をすますと
+どこか遠くで目覚まし時計のベルが鳴ってる
+それはあなたの送った朝を
+誰かがしっかりと受けとめた証拠なのだ</pre>
+            <div class="poem-author">— 谷川俊太郎</div>
+        </div>
+    </section>
+
+    <div class="playlist-wrapper">
+        <a href="https://open.spotify.com/playlist/3cfxH4fdJCJd5cjbnDQb5I?si=2TXx7jy7TXK0D1UdsITGzA&pi=_ai1xlbyQBCaZ" target="_blank" class="playlist-card">
+            <img src="images/sunset.jpeg" alt="Sunset compilation background art">
+            <div class="playlist-btn">
+                <i class="fa-solid fa-compact-disc fa-spin" style="--fa-animation-duration: 4s;"></i> Open Playlist Space
+            </div>
+        </a>
+    </div>
+
+    <div class="gif-container">
+        <img src="images/chainsaw.gif" alt="Chainsaw closing layout loop">
+    </div>
+
+</body>
+</html>
