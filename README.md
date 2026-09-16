@@ -21,6 +21,7 @@ This site serves as a central hub for my research interests in:
 The source code for the projects featured on the live site can be found here:
 * 🎶 [**EchoScope**](https://github.com/GianmariaRomano/EchoScope) - Spotify Track Analysis & Recommendation System.
 * 🍃 [**AQ-Chronos**](https://github.com/GianmariaRomano/AQ-Chronos) - Smart Air Quality Surveillance Across the Globe.
+* 🎓 [**Gait-ViViT**]() - Medical Video Processing Project for the Bachelor's Thesis in *Applied Computer Science and Artificial Intelligence*.
 
 ---
 
