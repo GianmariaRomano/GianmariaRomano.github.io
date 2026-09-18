@@ -8,7 +8,7 @@ This repository hosts my personal portfolio and academic showcase, built with HT
 - **Tech Stack:** Vanilla HTML5, CSS3 (Grid/Flexbox), FontAwesome.
 
 ## 🎓 Academic Context
-I am currently a third-year undergraduate at **Sapienza Università di Roma**, pursuing a Bachelor's Degree in **Applied Computer Science and Artificial Intelligence**.
+I am currently a first-year graduate student at **Sapienza Università di Roma**, pursuing a Master's Degree in *Data Science* and awaiting the defense of my Bachelor's thesis in *Applied Computer Science and Artificial Intelligence*.
 
 This site serves as a central hub for my research interests in:
 * Computer Vision 📸
